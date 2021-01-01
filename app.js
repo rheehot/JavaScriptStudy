@@ -12,7 +12,10 @@ toggleBtn.addEventListener('click', () =>{
 // selectItems 함수에 
 // menu.classList.remove('active'); 넣기 보다는
 //  blur 활용하기
-toggleBtn.addEventListener('blur', () =>{
+const varUA = navigator.userAgent.toLowerCase();
+const os = ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 );
+
+toggleBtn.addEventListener(os === 'ios' ? 'mouseout' : 'blur', () => {
     menu.classList.remove('active');
 });
 
