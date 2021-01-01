@@ -15,7 +15,7 @@ toggleBtn.addEventListener('click', () =>{
 const varUA = navigator.userAgent.toLowerCase();
 const os = ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 );
 
-toggleBtn.addEventListener(os === 'ios' ? 'mouseout' : 'blur', () => {
+toggleBtn.addEventListener(os === 'ios' ? 'touchleave' : 'blur', () => {
     menu.classList.remove('active');
 });
 
