@@ -49,7 +49,7 @@ form {
 form .dropdown {
     position: relative;
     z-index: 1;
-    /* margin-bottom: 0; */
+    margin-bottom: 0.8rem;
 }
 
 form .dropdown-toggle {
@@ -62,6 +62,7 @@ form .dropdown-toggle {
     border: 1px solid rgba(224, 226, 231, 0.75);
     border-radius: .7rem;
     transition: border-color 100ms ease-in;
+    position: relative;
 }
 
 form .dropdown-toggle.select {
@@ -69,13 +70,23 @@ form .dropdown-toggle.select {
     border-color: rgba(224, 226, 231, 1);
 }
 
+.dropdown-toggle:active {
+    border-color: rgba(224, 226, 231, 1);
+}
+
 form .dropdown-menu {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    z-index: 9;
     max-height: 0;
     overflow: hidden;
     border-radius: .7rem;
     background-color: #fff;
     width: 100%;
     box-shadow: 0 4px 9px 0 rgba(224, 226, 231, 0.75);
+    transition: border-color 200ms ease-in, padding 200ms ease-in,
+        max-height 200ms ease-in, box-shadow 200ms ease-in;
 }
 
 form .dropdown-menu.active {
@@ -100,9 +111,11 @@ form .dropdown-cont {
     outline: none;
     font-size: 1.2rem;
 }
-form .dropdown-cont:hover{
+
+form .dropdown-cont:hover {
     background-color: #f8f9fa;
 }
+
 form .next-btn {
     padding: 0 8rem;
     border-radius: .7rem;
@@ -112,8 +125,10 @@ form .next-btn {
     font-size: 1.4rem;
     background-color: #000;
     color: #fff;
+    transition: background-color 150ms ease-in;
 }
-form .next-btn:disabled{
+
+form .next-btn:disabled {
     background-color: #e0e2e7;
     cursor: not-allowed;
 }
