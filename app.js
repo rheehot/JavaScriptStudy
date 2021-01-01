@@ -9,3 +9,18 @@ toggleBtn.addEventListener('click', () =>{
     menu.classList.toggle('active');
 });
 
+function selectItems(items){
+    const value = items.currentTarget.textContent.trim();
+    // const value = items.currentTarget.outerText;
+    toggleBtn.textContent = value;
+    toggleBtn.classList.add('select');
+    nextBtn.removeAttribute('disabled');
+    menu.classList.remove('active');
+}
+
+// 가능할까?
+//menu.addEventListener('click', selectItems);
+
+items.forEach((items)=>{
+    items.addEventListener('click', selectItems)
+});
