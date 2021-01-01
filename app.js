@@ -9,13 +9,22 @@ toggleBtn.addEventListener('click', () =>{
     menu.classList.toggle('active');
 });
 
+// selectItems 함수에 
+// menu.classList.remove('active'); 넣기 보다는
+//  blur 활용하기
+toggleBtn.addEventListener('blur', () =>{
+    menu.classList.remove('active');
+});
+
+
 function selectItems(items){
-    const value = items.currentTarget.textContent.trim();
-    // const value = items.currentTarget.outerText;
-    toggleBtn.textContent = value;
+    console.log(items.currentTarget.textContent.trim());
+    const name = items.currentTarget.textContent.trim();
+    // const name = items.currentTarget.outerText;
+    toggleBtn.textContent = name;
     toggleBtn.classList.add('select');
     nextBtn.removeAttribute('disabled');
-    menu.classList.remove('active');
+    // menu.classList.remove('active');
 }
 
 // 가능할까?
