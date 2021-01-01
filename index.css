@@ -25,6 +25,7 @@ button {
     background-color: #fff;
     border: none;
     cursor: pointer;
+    outline-style: none;
 }
 
 .body__container {
@@ -63,15 +64,9 @@ form .dropdown-toggle {
     transition: border-color 100ms ease-in;
 }
 
-.dropdown-toggle.select {
+form .dropdown-toggle.select {
     color: #3f4150;
     border-color: rgba(224, 226, 231, 1);
-}
-
-form .dropdown-menu.active {
-    max-height: 50rem;
-    border-color: rgba(224, 226, 231, 0.5);
-    box-shadow: 0 4px 9px 0 rgba(63, 65, 80, 0.1);
 }
 
 form .dropdown-menu {
@@ -81,6 +76,12 @@ form .dropdown-menu {
     background-color: #fff;
     width: 100%;
     box-shadow: 0 4px 9px 0 rgba(224, 226, 231, 0.75);
+}
+
+form .dropdown-menu.active {
+    max-height: 50rem;
+    border-color: rgba(224, 226, 231, 0.5);
+    box-shadow: 0 4px 9px 0 rgba(63, 65, 80, 0.1);
 }
 
 form .dropdown-item {
@@ -109,4 +110,10 @@ form .next-btn {
     width: 100%;
     height: 3rem;
     font-size: 1.4rem;
+    background-color: #000;
+    color: #fff;
+}
+form .next-btn:disabled{
+    background-color: #e0e2e7;
+    cursor: not-allowed;
 }
